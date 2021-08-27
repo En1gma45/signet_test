@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 43%;
+        margin: 0 10% 0 28%;
+        padding-left: 10%;
+    }
+}
+
+table {
+    width: 100%;
+  }

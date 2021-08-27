@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="container__buttons">
+        <button mat-stroked-button color="primary" (click) = 'sortByGenre1()'>Sort by Genre1</button>
+        <button mat-raised-button color="primary" (click) = "sortByGenre2()">Sort by Genre2</button>
+        <button mat-raised-button color="primary" (click) = 'sortByYear()'>Sort by Year</button>
+    </div>
+    <div class="container__table">
+        <table table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Id </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="genre1">
+                <th mat-header-cell *matHeaderCellDef> Genre1 </th>
+                <td mat-cell *matCellDef="let element"> {{element.genre1}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="genre2">
+                <th mat-header-cell *matHeaderCellDef> Genre2 </th>
+                <td mat-cell *matCellDef="let element"> {{element.genre2}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="year">
+                <th mat-header-cell *matHeaderCellDef> Year </th>
+                <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>
